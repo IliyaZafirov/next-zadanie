@@ -65,5 +65,10 @@
     "tab-users-server-err": "Server error",
     "save-user-save-alert": "Error on save users",
     "save-user-server-err": "Server error"
+  },
+  "Header": {
+    "back-btn": "Back",
+    "exit-btn": "Exit"
   }
+
 }

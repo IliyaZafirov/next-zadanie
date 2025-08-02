@@ -65,5 +65,10 @@
     "tab-users-server-err": "Сървърна грешка",
     "save-user-save-alert": "Грешка при записване на потребителя",
     "save-user-server-err": "Сървърна грешка"
+  },
+  "Header": {
+    "back-btn": "Назад",
+    "exit-btn": "Изход"
   }
+
 }

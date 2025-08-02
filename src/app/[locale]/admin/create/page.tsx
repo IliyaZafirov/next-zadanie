@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import AdminNavigation from "@/components/admin/nav-admin";
+import { getAdminRole } from "@/lib/get-admin-role";
 
-export default function AdminCreatePage() {
+export default async function Page() {
   const [type, setType] = useState<"region" | "section" | "control">("region");
   const [name, setName] = useState("");
   const [parentId, setParentId] = useState<number | "">("");
@@ -11,18 +12,27 @@ export default function AdminCreatePage() {
   const [sections, setSections] = useState<{ id: number; name: string }[]>([]);
   const [message, setMessage] = useState("");
 
+  const { isAdmin, role } = await getAdminRole();
+
+
   useEffect(() => {
     async function fetchData() {
       try {
-        const resRegions = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/regions`, {
-          credentials: "include",
-        });
+        const resRegions = await fetch(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/regions`,
+          {
+            credentials: "include",
+          }
+        );
         const dataRegions = await resRegions.json();
         if (dataRegions.success) setRegions(dataRegions.data);
 
-        const resSections = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/sections`, {
-          credentials: "include",
-        });
+        const resSections = await fetch(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/sections`,
+          {
+            credentials: "include",
+          }
+        );
         const dataSections = await resSections.json();
         if (dataSections.success) setSections(dataSections.data);
       } catch (err) {
@@ -37,16 +47,19 @@ export default function AdminCreatePage() {
     setMessage("");
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/create`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({
-          type,
-          name,
-          parent_id: parentId || undefined,
-        }),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/create`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({
+            type,
+            name,
+            parent_id: parentId || undefined,
+          }),
+        }
+      );
 
       const data = await res.json();
       if (data.success) {
@@ -64,22 +77,16 @@ export default function AdminCreatePage() {
 
   return (
     <main className="p-6">
-      {/* Навигация */}
-      <div className="flex gap-4 mb-6">
-        <Link href="/admin" className="bg-purple-600 hover:bg-purple-500 py-2 px-2 rounded text-white">
-          Controls
-        </Link>
-        <Link href="/admin/create" className="bg-green-600 hover:bg-green-500 py-2 px-2 rounded text-white">
-          Create
-        </Link>
-        <Link href="/admin/events" className="bg-orange-600 hover:bg-orange-500 py-2 px-2 rounded text-white">
-          Events
-        </Link>
-      </div>
+      {isAdmin && <AdminNavigation />}
 
-      <h1 className="text-xl font-bold text-white mb-4">Създаване на елемент</h1>
+      <h1 className="text-xl font-bold text-white mb-4">
+        Създаване на елемент
+      </h1>
 
-      <form onSubmit={handleSubmit} className="bg-gray-800 p-4 rounded-lg text-white max-w-lg">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-gray-800 p-4 rounded-lg text-white max-w-lg"
+      >
         <label className="block mb-2">Тип</label>
         <select
           value={type}
@@ -121,7 +128,10 @@ export default function AdminCreatePage() {
           </>
         )}
 
-        <button type="submit" className="bg-amber-600 hover:bg-amber-500 px-4 py-2 rounded">
+        <button
+          type="submit"
+          className="bg-amber-600 hover:bg-amber-500 px-4 py-2 rounded"
+        >
           Създай
         </button>
 
