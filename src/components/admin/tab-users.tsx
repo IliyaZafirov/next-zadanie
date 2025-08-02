@@ -54,7 +54,7 @@ export default function UsersTab({
 
   async function fetchUsers() {
     try {
-      const res = await fetch("https://next-zadanie.vercel.app/api/admin/users", {
+      const res = await fetch("/api/admin/users", {
         credentials: "include",
       });
       const data = await res.json();
@@ -73,13 +73,13 @@ export default function UsersTab({
   async function handleEditClick(userId: number) {
     try {
     
-      const resUser = await fetch(`https://next-zadanie.vercel.app/api/admin/users/${userId}`, {
+      const resUser = await fetch(`/api/admin/users/${userId}`, {
         credentials: "include",
       });
       const userData = await resUser.json();
 
 
-      const resControls = await fetch(`https://next-zadanie.vercel.app/api/admin/controls`, {
+      const resControls = await fetch(`/api/admin/controls`, {
         credentials: "include",
       });
       const controlsData = await resControls.json();
@@ -106,7 +106,7 @@ export default function UsersTab({
     if (!editUser) return;
     try {
       const res = await fetch(
-        `https://next-zadanie.vercel.app/api/admin/users/${editUser.id}`,
+        `/api/admin/users/${editUser.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

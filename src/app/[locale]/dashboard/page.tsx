@@ -33,7 +33,7 @@ export default async function Page() {
     console.error("JWT decode error:", err);
   }
 
-  const response = await fetch("hhttps://next-zadanie.vercel.app/api/my-controls", {
+  const response = await fetch("h/api/my-controls", {
     method: "GET",
     credentials: "include",
     headers: {

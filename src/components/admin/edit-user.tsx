@@ -51,7 +51,7 @@ export default function EditUser({
 
   async function fetchControls() {
     try {
-      const res = await fetch("https://next-zadanie.vercel.app/api/admin/controls", {
+      const res = await fetch("/api/admin/controls", {
         credentials: "include",
       });
       const data = await res.json();

@@ -17,7 +17,7 @@ export default function ControlButton({
 
   const handleClick = async () => {
     try {
-      const res = await fetch("https://next-zadanie.vercel.app/api/control-click", {
+      const res = await fetch("/api/control-click", {
         method: "POST",
         credentials: "include",
         headers: {
