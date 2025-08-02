@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 
 export default async function Page() {
-  const t = await getTranslations("AdminPage");
+  const t = await getTranslations("AdminUsersPage"); // must fix
 
   const cookieStore = await cookies();
   const token = cookieStore.get("userRegistered")?.value;

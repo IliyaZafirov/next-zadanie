@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AdminNavigation from "@/components/admin/nav-admin";
-import Link from "next/link";
 import H1 from "@/components/h1";
+import GlassLink from "@/components/ui/link-glass";
 
 export default function Page() {
   const [type, setType] = useState<"region" | "section" | "control">("region");
@@ -34,7 +33,7 @@ export default function Page() {
         const dataSections = await resSections.json();
         if (dataSections.success) setSections(dataSections.data);
       } catch (err) {
-        console.error(err);
+        console.log(err);
       }
     }
     fetchData();
@@ -68,7 +67,7 @@ export default function Page() {
         setMessage("Грешка при създаване.");
       }
     } catch (err) {
-      console.error(err);
+      console.log(err);
       setMessage("Сървърна грешка");
     }
   };
@@ -82,31 +81,42 @@ export default function Page() {
 
       {/* Must fix this Nav - no auth now  */}
       <div className="flex gap-4 mb-6">
-        <Link
-          href="/admin"
-          className="bg-purple-600 hover:bg-purple-500 py-2 px-2 rounded text-white"
-        >
-          Controls {/* {t("controls")} */}
-        </Link>
-        <Link
-          href="/admin/create"
-          className="bg-green-600 hover:bg-green-500 py-2 px-2 rounded text-white"
-        >
-          Create {/* {t("create")} */}
-        </Link>
-        <Link
-          href="/admin/events"
-          className="bg-orange-600 hover:bg-orange-500 py-2 px-2 rounded text-white"
-        >
-          Events
-        </Link>
-        <Link
-          href="/admin/dashboard"
-          className="bg-blue-600 hover:bg-blue-500 py-2 px-2 rounded text-white"
-        >
-          Dashboard
-        </Link>
-      </div>
+      <GlassLink
+        href="/admin/users"
+        className="bg-gray-800/30 px-4 py-2"
+        textSize="!capitalize"
+      >
+        Users {/* {t("controls")} */}
+      </GlassLink>
+      <GlassLink
+        href="/admin/controls"
+        className="bg-gray-800/30 px-4 py-2"
+        textSize="!capitalize"
+      >
+        Controls {/* {t("controls")} */}
+      </GlassLink>
+      <GlassLink
+        href="/admin/create"
+        className="bg-gray-800/30 px-4 py-2"
+        textSize="!capitalize"
+      >
+        Create {/* {t("create")} */}
+      </GlassLink>
+      <GlassLink
+        href="/admin/events"
+        className="bg-gray-800/30 px-4 py-2"
+        textSize="!capitalize"
+      >
+        Events
+      </GlassLink>
+      <GlassLink
+        href="/dashboard"
+        className="bg-gray-800/30 px-4 py-2"
+        textSize="!capitalize"
+      >
+        Dashboard
+      </GlassLink>
+    </div>
       {/* {isAdmin && <AdminNavigation />} */}
       <div className="flex justify-center items-center">
         <form

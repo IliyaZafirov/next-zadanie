@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import EditUser from "./edit-user";
+import GlassButton from "../ui/btn-glass";
 
 type User = {
   id: number;
@@ -104,7 +105,7 @@ export default function UsersTab({
         alert("Грешка при зареждане на данните");
       }
     } catch (err) {
-      console.error(err);
+      console.log(err);
       alert("Сървърна грешка");
     }
   }
@@ -137,7 +138,7 @@ export default function UsersTab({
   if (error) return <p className="text-red-500">{error}</p>;
 
   return (
-    <div className="bg-gray-800 p-4 rounded-lg relative">
+    <div className="bg-gray-900 p-4  relative">
       <table className="w-full text-white">
         <thead>
           <tr className="border-b border-gray-600">
@@ -145,7 +146,7 @@ export default function UsersTab({
             <th className="p-2 text-left">{labels.user}</th>
             <th className="p-2 text-left">{labels.email}</th>
             <th className="p-2 text-left">{labels.role}</th>
-            <th className="p-2 text-left">{labels.status}</th>
+            {/* <th className="p-2 text-left">{labels.status}</th> */}
             <th className="p-2 text-left">{labels.actions}</th>
           </tr>
         </thead>
@@ -156,20 +157,21 @@ export default function UsersTab({
               <td className="p-2">{u.username}</td>
               <td className="p-2">{u.email}</td>
               <td className="p-2">{u.role}</td>
-              <td className="p-2">
+              {/* <td className="p-2">
                 {u.active ? (
                   <span className="text-green-400">Активен</span>
                 ) : (
                   <span className="text-red-400">Неактивен</span>
                 )}
-              </td>
+              </td> */}
               <td className="p-2">
-                <button
+                <GlassButton
+                  type="button"
                   onClick={() => handleEditClick(u.id)}
-                  className="bg-amber-700 hover:bg-amber-500 px-3 py-1 rounded"
+                  className="bg-gray-800/30 px-4 py-2"
                 >
                   Промени
-                </button>
+                </GlassButton>
               </td>
             </tr>
           ))}

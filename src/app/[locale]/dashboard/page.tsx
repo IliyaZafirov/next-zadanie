@@ -30,7 +30,7 @@ export default async function Page() {
     const decoded = jwt.decode(token) as { role?: string };
     role = decoded?.role || null;
   } catch (err) {
-    console.error("JWT decode error:", err);
+    console.log("JWT decode error:", err);
   }
 
   const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/my-controls`, {

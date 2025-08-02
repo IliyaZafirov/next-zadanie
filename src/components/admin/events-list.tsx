@@ -28,7 +28,7 @@ export default function EventsList() {
         setEvents(data.data);
       }
     } catch (err) {
-      console.error(err);
+      console.log(err);
     } finally {
       setLoading(false);
     }

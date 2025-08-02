@@ -53,10 +53,10 @@
     "control-btn": "Control",
     "admin-panel": "Administration functions"
   },
-  "AdminPage": {
+  "AdminUsersPage": {
     "h1": "Administration panel",
     "id": "ID",
-    "user": "User",
+    "user": "Username",
     "email": "Email",
     "role": "Role",
     "status": "Status",

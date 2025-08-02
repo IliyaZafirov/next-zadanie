@@ -1,7 +1,8 @@
-import H1 from "@/components/h1";
+import UsersTab from "@/components/admin/tab-users";
 import { getTranslations } from "next-intl/server";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
+import H1 from "@/components/h1";
 import AdminNavigation from "@/components/admin/nav-admin";
 
 export default async function Page() {
@@ -27,14 +28,14 @@ export default async function Page() {
   }
 
   const isAdmin = role === "admin" || role === "power_admin";
-  
+
   return (
     <main className="p-6">
       <H1 className="mb-4">{t("h1")}</H1>
 
       {isAdmin && <AdminNavigation />}
 
-      {/* <UsersTab
+      <UsersTab
         currentUserRole={safeRole}
         labels={{
           id: t("id"),
@@ -44,7 +45,7 @@ export default async function Page() {
           status: t("status"),
           actions: t("actions"),
         }}
-      /> */}
+      />
     </main>
   );
 }

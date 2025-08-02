@@ -59,7 +59,7 @@ export default function EditUser({
         setAllControls(data.data);
       }
     } catch (err) {
-      console.error("Грешка при зареждане на контролите", err);
+      console.log("Грешка при зареждане на контролите", err);
     } finally {
       setLoadingControls(false);
     }

@@ -34,10 +34,10 @@ export default function Navigation({ labels }: { labels: Labels }) {
 
   return (
     <nav className="flex flex-row gap-x-4 mb-6">
-      <button onClick={() => router.back()} className="hover:text-gray-400">
+      <button onClick={() => router.back()} className="bg-emerald-800 py-2 px-2 hover:text-gray-400">
         {labels.backBtn}
       </button>
-      <button onClick={() => router.push("/")} className="hover:text-gray-400">
+      <button onClick={() => router.push("/")} className="bg-emerald-800 py-2 px-2 hover:text-gray-400">
         {labels.exitBtn}
       </button>
     </nav>
