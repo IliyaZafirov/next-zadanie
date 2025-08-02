@@ -121,10 +121,8 @@ export default function UsersTab({
       } else {
         alert("Грешка при записване на потребителя");
       }
-    } catch (err) {
+    } catch (_err) {
       alert("Сървърна грешка");
-      console.log(err);
-      
     }
   }
 
