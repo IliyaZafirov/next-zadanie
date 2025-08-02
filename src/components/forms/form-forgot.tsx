@@ -75,7 +75,7 @@ export default function ForgotForm({
     }
 
     try {
-      const response = await fetch(`https://next-zadanie.vercel.app/api/auth/forgot`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/forgot`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

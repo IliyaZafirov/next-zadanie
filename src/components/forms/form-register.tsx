@@ -96,7 +96,7 @@ export default function RegisterForm({
     }
 
     try {
-      const response = await fetch(`https://next-zadanie.vercel.app/api/auth/register`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
