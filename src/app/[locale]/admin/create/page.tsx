@@ -2,18 +2,16 @@
 
 import { useEffect, useState } from "react";
 import AdminNavigation from "@/components/admin/nav-admin";
-import { getAdminRole } from "@/lib/get-admin-role";
+import Link from "next/link";
+import H1 from "@/components/h1";
 
-export default async function Page() {
+export default function Page() {
   const [type, setType] = useState<"region" | "section" | "control">("region");
   const [name, setName] = useState("");
   const [parentId, setParentId] = useState<number | "">("");
   const [regions, setRegions] = useState<{ id: number; name: string }[]>([]);
   const [sections, setSections] = useState<{ id: number; name: string }[]>([]);
   const [message, setMessage] = useState("");
-
-  const { isAdmin, role } = await getAdminRole();
-
 
   useEffect(() => {
     async function fetchData() {
@@ -77,66 +75,95 @@ export default async function Page() {
 
   return (
     <main className="p-6">
-      {isAdmin && <AdminNavigation />}
+      <H1 className="mb-4">
+        Must Fix this h1 Create
+        {/* {t("h1")} */}
+      </H1>
 
-      <h1 className="text-xl font-bold text-white mb-4">
-        Създаване на елемент
-      </h1>
-
-      <form
-        onSubmit={handleSubmit}
-        className="bg-gray-800 p-4 rounded-lg text-white max-w-lg"
-      >
-        <label className="block mb-2">Тип</label>
-        <select
-          value={type}
-          onChange={(e) => setType(e.target.value as any)}
-          className="w-full bg-gray-700 p-2 rounded mb-4"
+      {/* Must fix this Nav - no auth now  */}
+      <div className="flex gap-4 mb-6">
+        <Link
+          href="/admin"
+          className="bg-purple-600 hover:bg-purple-500 py-2 px-2 rounded text-white"
         >
-          <option value="region">Регион</option>
-          <option value="section">Секция</option>
-          <option value="control">Контрола</option>
-        </select>
-
-        <label className="block mb-2">Име</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="w-full bg-gray-700 p-2 rounded mb-4"
-        />
-
-        {(type === "section" || type === "control") && (
-          <>
-            <label className="block mb-2">
-              {type === "section" ? "Регион" : "Секция"}
-            </label>
-            <select
-              value={parentId}
-              onChange={(e) => setParentId(Number(e.target.value))}
-              required
-              className="w-full bg-gray-700 p-2 rounded mb-4"
-            >
-              <option value="">-- Избери --</option>
-              {(type === "section" ? regions : sections).map((item) => (
-                <option key={item.id} value={item.id}>
-                  {item.name}
-                </option>
-              ))}
-            </select>
-          </>
-        )}
-
-        <button
-          type="submit"
-          className="bg-amber-600 hover:bg-amber-500 px-4 py-2 rounded"
+          Controls {/* {t("controls")} */}
+        </Link>
+        <Link
+          href="/admin/create"
+          className="bg-green-600 hover:bg-green-500 py-2 px-2 rounded text-white"
         >
-          Създай
-        </button>
+          Create {/* {t("create")} */}
+        </Link>
+        <Link
+          href="/admin/events"
+          className="bg-orange-600 hover:bg-orange-500 py-2 px-2 rounded text-white"
+        >
+          Events
+        </Link>
+        <Link
+          href="/admin/dashboard"
+          className="bg-blue-600 hover:bg-blue-500 py-2 px-2 rounded text-white"
+        >
+          Dashboard
+        </Link>
+      </div>
+      {/* {isAdmin && <AdminNavigation />} */}
+      <div className="flex justify-center items-center">
+        <form
+          onSubmit={handleSubmit}
+          className=" bg-gray-800 p-4 rounded-lg text-white max-w-lg"
+        >
+          <label className="block mb-2">Тип</label>
+          <select
+            value={type}
+            onChange={(e) => setType(e.target.value as any)}
+            className="w-full bg-gray-700 p-2 rounded mb-4"
+          >
+            <option value="region">Регион</option>
+            <option value="section">Секция</option>
+            <option value="control">Контрола</option>
+          </select>
 
-        {message && <p className="mt-4 text-green-400">{message}</p>}
-      </form>
+          <label className="block mb-2">Име</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="w-full bg-gray-700 p-2 rounded mb-4"
+          />
+
+          {(type === "section" || type === "control") && (
+            <>
+              <label className="block mb-2">
+                {type === "section" ? "Регион" : "Секция"}
+              </label>
+              <select
+                value={parentId}
+                onChange={(e) => setParentId(Number(e.target.value))}
+                required
+                className="w-full bg-gray-700 p-2 rounded mb-4"
+              >
+                <option value="">-- Избери --</option>
+                {(type === "section" ? regions : sections).map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.name}
+                  </option>
+                ))}
+              </select>
+            </>
+          )}
+
+          <button
+            type="submit"
+            className="bg-amber-600 hover:bg-amber-500 px-4 py-2 rounded"
+          >
+            Създай
+          </button>
+
+          {message && <p className="mt-4 text-green-400">{message}</p>}
+        </form>
+      </div>
     </main>
   );
 }

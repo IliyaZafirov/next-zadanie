@@ -23,7 +23,7 @@ export default function AdminNavigation() {
       Events
     </Link>
     <Link
-      href="/admin/events"
+      href="/dashboard"
       className="bg-blue-600 hover:bg-blue-500 py-2 px-2 rounded text-white"
     >
       Dashboard
