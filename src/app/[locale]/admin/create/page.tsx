@@ -14,13 +14,13 @@ export default function AdminCreatePage() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const resRegions = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/regions`, {
+        const resRegions = await fetch(`https://next-zadanie.vercel.app/api/admin/regions`, {
           credentials: "include",
         });
         const dataRegions = await resRegions.json();
         if (dataRegions.success) setRegions(dataRegions.data);
 
-        const resSections = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/sections`, {
+        const resSections = await fetch(`https://next-zadanie.vercel.app/api/admin/sections`, {
           credentials: "include",
         });
         const dataSections = await resSections.json();
@@ -37,7 +37,7 @@ export default function AdminCreatePage() {
     setMessage("");
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/create`, {
+      const res = await fetch(`https://next-zadanie.vercel.app/api/admin/create`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
