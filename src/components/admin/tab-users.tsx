@@ -123,6 +123,8 @@ export default function UsersTab({
       }
     } catch (err) {
       alert("Сървърна грешка");
+      console.log(err);
+      
     }
   }
 
