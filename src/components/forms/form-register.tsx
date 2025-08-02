@@ -48,6 +48,7 @@ export default function RegisterForm({
   returnCase: ReturnCase;
 }) {
   const [formData, setFormData] = useState({
+    username: "",
     email: "",
     password: "",
     confirm_password: "",
