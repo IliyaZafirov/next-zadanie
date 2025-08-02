@@ -1,0 +1,69 @@
+{
+  "HomePage": {
+    "h1": "Welcome!",
+    "about": "Go to the about page",
+    "register-btn": "Register",
+    "login-btn": "Login"
+  },
+  "RegisterPage": {
+    "h1": "Register",
+    "username": "Username",
+    "username-help": "Minimum 4 characters length.",
+    "email": "Email Address",
+    "email-help": "We'll never share your email with anyone else.",
+    "password": "Password",
+    "password-help": "Minimum 8 characters length.",
+    "confirm-password": "Confirm Password",
+    "confirm-password-help": "We'll never ask for your password.",
+    "submit": "Register Me",
+    "forgot-password": "Forgot Password",
+    "back": "Back",
+    "username-exists": "This username already exists.",
+    "email-exists": "This email address already exists",
+    "success-case": "Successfully registered.",
+    "error-case": "An error occurred during the registration. Please try again.",
+    "pass-not-match-case": "Passwords do not match!"
+  },
+  "ForgotPage": {
+    "h1": "Forgot Password",
+    "email": "Email Address",
+    "new-password": "Password",
+    "confirm-new-password": "Confirm Password",
+    "email-not-found": "This email address is not found.",
+    "success-case": "Password Updated.",
+    "error-case": "An error occurred. Please try again.",
+    "submit": "Change Password"
+  },
+  "LoginPage": {
+    "h1": "Login",
+    "username": "Username",
+    "password": "Password",
+    "empty-fields-case": "Please add your username and password.",
+    "incorrect-case": "Incorrect username or password.",
+    "success-case": "Successfully logged in.",
+    "error-case": "An error occurred while logging in.",
+    "submit": "Login"
+  },
+  "DashboardPage": {
+    "h1": "Dashboard",
+    "h1-noaccess": "Not authenticated.",
+    "controls-not-exists": "Controls not exists.",
+    "region": "Region",
+    "sections": "Sections",
+    "control-btn": "Control",
+    "admin-panel": "Administration functions"
+  },
+  "AdminPage": {
+    "h1": "Administration panel",
+    "id": "ID",
+    "user": "User",
+    "email": "Email",
+    "role": "Role",
+    "status": "Status",
+    "actions": "Actions",
+    "tab-users-loading-err": "Error on loading users",
+    "tab-users-server-err": "Server error",
+    "save-user-save-alert": "Error on save users",
+    "save-user-server-err": "Server error"
+  }
+}
