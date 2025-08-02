@@ -51,7 +51,7 @@ export default function EditUser({
 
   async function fetchControls() {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/controls`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/controls`, {
         credentials: "include",
       });
       const data = await res.json();

@@ -33,7 +33,7 @@ export default async function Page() {
     console.error("JWT decode error:", err);
   }
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/my-controls`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/my-controls`, {
     method: "GET",
     credentials: "include",
     headers: {

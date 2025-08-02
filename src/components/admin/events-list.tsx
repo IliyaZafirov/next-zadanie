@@ -20,7 +20,7 @@ export default function EventsList() {
 
   async function fetchEvents() {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/events`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/events`, {
         credentials: "include",
       });
       const data = await res.json();

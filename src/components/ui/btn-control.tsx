@@ -17,7 +17,7 @@ export default function ControlButton({
 
   const handleClick = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/control-click`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/control-click`, {
         method: "POST",
         credentials: "include",
         headers: {
