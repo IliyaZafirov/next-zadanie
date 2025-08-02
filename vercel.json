@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "https://express-zadanie.onrender.com/$1"
+        }
+    ],
+    "redirects": [
+        {
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "Origin"
+                }
+            ],
+            "destination": "https://next-zadanie.vercel.app/:path*",
+            "permanent": true
+        }
+    ]
+}
