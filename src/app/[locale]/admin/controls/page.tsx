@@ -86,12 +86,12 @@ export default async function Page() {
                 <td className="p-2">{c.section_name}</td>
                 <td className="p-2">{c.region_name}</td>
                 <td className="p-2">
-                  <GlassLink
+                  {/* <GlassLink
                     href={`/admin/controls/${c.control_id}`}
                     className="bg-gray-800/30 px-4 py-2 text-sm"
                   >
                     Промени
-                  </GlassLink>
+                  </GlassLink> */}
                 </td>
               </tr>
             ))}
