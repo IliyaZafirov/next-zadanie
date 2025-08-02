@@ -1,3 +1,12 @@
+import React from 'react'
+
+export default function Page() {
+  return (
+    <div>Controls Page</div>
+  )
+}
+
+
 // import { cookies } from "next/headers";
 // import jwt from "jsonwebtoken";
 // import Link from "next/link";
