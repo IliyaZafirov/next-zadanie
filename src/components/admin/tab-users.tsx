@@ -54,7 +54,7 @@ export default function UsersTab({
 
   async function fetchUsers() {
     try {
-      const res = await fetch("/api/admin/users", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/users`, {
         credentials: "include",
       });
       const data = await res.json();
