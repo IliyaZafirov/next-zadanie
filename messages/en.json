@@ -122,6 +122,18 @@
     "details": "Details",
     "date": "Date"
   },
+  "AdminControlsEditByIdPage": {
+    "noaccess": "You don't have access to this page.",
+    "control-not-found": "This control is not found.",
+    "h1": "Edit Control",
+    "name": "Name:",
+    "section": "Section:",
+    "region": "Region:",
+    "add-access": "Add access",
+    "add-access-btn": "Save",
+    "users-with-access": "Users with access",
+    "no-users": "No users added"
+  },
   "Header": {
     "back-btn": "Back",
     "exit-btn": "Exit"

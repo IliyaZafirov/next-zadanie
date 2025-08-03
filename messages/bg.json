@@ -72,7 +72,6 @@
     "actions-handle-err-data-loading": "Грешка при зареждане на данните",
     "actions-handle-server-err": "Сървърна грешка",
     "edit-user-handle-confirm": "Сигурни ли сте, че искате да запазите промените?",
-
     "edit-user-h2": "Промени",
     "edit-user-label-role": "Роля",
     "edit-user-disable-role-change": "Нямате право да сменяте тази роля",
@@ -86,7 +85,6 @@
     "edit-user-loading-controls": "Зареждане...",
     "edit-user-button-cancel": "Отказ",
     "edit-user-button-save": "Запази",
-
     "tab-users-loading-err": "Грешка при зареждане на потребителите",
     "tab-users-server-err": "Сървърна грешка",
     "save-user-save-alert": "Грешка при записване на потребителя",
@@ -121,6 +119,18 @@
     "type": "Тип",
     "details": "Детайли",
     "date": "Дата"
+  },
+  "AdminControlsEditByIdPage": {
+    "noaccess": "Нямате достъп до тази страница.",
+    "control-not-found": "Контролата не е намерена.",
+    "h1": "Редакция на Контрола",
+    "name": "Име:",
+    "section": "Секция:",
+    "region": "Регион:",
+    "add-access": "Добавяне на достъп",
+    "add-access-btn": "Запази",
+    "users-with-access": "Потребители с достъп",
+    "no-users": "Няма добавени потребители"
   },
   "Header": {
     "back-btn": "Назад",

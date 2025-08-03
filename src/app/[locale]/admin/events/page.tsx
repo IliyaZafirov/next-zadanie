@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 import EventsNavigation from "@/components/admin/nav-events";
 
 export default async function Page() {
-  const t = await getTranslations("AdminUsersPage"); // must fix
+  const t = await getTranslations("AdminControlsEventsPage"); // must fix
 
   const cookieStore = await cookies();
   const token = cookieStore.get("userRegistered")?.value;
@@ -33,9 +33,8 @@ export default async function Page() {
   return (
     <main className="mt-26 p-6">
       {isAdmin && <AdminNavigation />}
-      <H1 className="mb-4">{t("h1")}</H1>
-
       <EventsNavigation />
+      <H1 className="mb-4">{t("h1")}</H1>
     </main>
   );
 }

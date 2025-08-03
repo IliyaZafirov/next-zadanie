@@ -13,10 +13,12 @@ export default function ControlEditForm({
   controlId,
   allUsers,
   usersWithAccess,
+  labelBtnSave,
 }: {
   controlId: number;
   allUsers: User[];
   usersWithAccess: User[];
+  labelBtnSave: string;
 }) {
   const [selectedUsers, setSelectedUsers] = useState<number[]>(
     usersWithAccess.map((u) => u.id)
@@ -69,12 +71,12 @@ export default function ControlEditForm({
           {u.username} ({u.email})
         </label>
       ))}
-                <GlassButton
-                type="submit"
-                    className="bg-gray-800/30 px-4 py-2 text-sm mt-4"
-                  >
-                    Запази
-                  </GlassButton>
+      <GlassButton
+        type="submit"
+        className="bg-gray-800/30 px-4 py-2 text-sm mt-4"
+      >
+        {labelBtnSave}
+      </GlassButton>
 
       {message && <p className="mt-2">{message}</p>}
     </form>
