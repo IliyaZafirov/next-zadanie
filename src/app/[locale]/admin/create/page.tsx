@@ -119,6 +119,7 @@ export default function Page() {
         </GlassLink>
       </div>
       {/* {isAdmin && <AdminNavigation />} */}
+      
       <div className="flex">
         <form
           onSubmit={handleSubmit}

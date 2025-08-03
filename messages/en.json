@@ -53,6 +53,13 @@
     "control-btn": "Control",
     "admin-panel": "Administration functions"
   },
+  "AdminNavigation": {
+    "users": "Users",
+    "controls": "Controls",
+    "create": "Create",
+    "events-lists": "Events Lists",
+    "dashboard": "Dashboard"
+  },
   "AdminUsersPage": {
     "h1": "Administration panel",
     "id": "ID",
@@ -66,9 +73,21 @@
     "save-user-save-alert": "Error on save users",
     "save-user-server-err": "Server error"
   },
+  "AdminControlsPage": {
+    "h1": "Controls List",
+    "id": "ID",
+    "user": "Username",
+    "section": "Section",
+    "region": "Region",
+    "action": "Action"
+  },
+  "AdminCreatePage": {
+    "type": "Type",
+    "name": "Name",
+    "create-btn": "Create"
+  },
   "Header": {
     "back-btn": "Back",
     "exit-btn": "Exit"
   }
-
 }

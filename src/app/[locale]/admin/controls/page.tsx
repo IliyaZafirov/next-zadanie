@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import H1 from "@/components/h1";
 import AdminNavigation from "@/components/admin/nav-admin";
 import GlassLink from "@/components/ui/link-glass";
+import { getTranslations } from "next-intl/server";
 
 type Control = {
   control_id: number;
@@ -38,6 +39,8 @@ async function getControls(): Promise<Control[]> {
 }
 
 export default async function Page() {
+  const t = await getTranslations("AdminControlsPage");
+
   const cookieStore = await cookies();
   const token = cookieStore.get("userRegistered")?.value;
 
@@ -63,18 +66,18 @@ export default async function Page() {
 
   return (
     <main className="mt-26 p-6">
-      <H1 className="mb-4">Списък с контролни</H1>
+      <H1 className="mb-4">{t("h1")}</H1>
 
       {isAdmin && <AdminNavigation />}
       <div className="bg-gray-900 p-4 relative">
         <table className="w-full text-white">
           <thead>
             <tr className="border-b border-gray-600">
-              <th className="p-2 text-left">ID</th>
-              <th className="p-2 text-left">Име</th>
-              <th className="p-2 text-left">Секция</th>
-              <th className="p-2 text-left">Регион</th>
-              <th className="p-2 text-left">Действия</th>
+              <th className="p-2 text-left">{t("id")}</th>
+              <th className="p-2 text-left">{t("user")}</th>
+              <th className="p-2 text-left">{t("section")}</th>
+              <th className="p-2 text-left">{t("region")}</th>
+              <th className="p-2 text-left">{t("action")}</th>
             </tr>
           </thead>
           <tbody>

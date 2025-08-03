@@ -53,6 +53,13 @@
     "control-btn": "Контрола",
     "admin-panel": "Административни функционалности"
   },
+  "AdminNavigation": {
+    "users": "Потребители",
+    "controls": "Контролни",
+    "create": "Създай",
+    "events-lists": "Списък Събития",
+    "dashboard": "Потребителски Панел"
+  },
   "AdminUsersPage": {
     "h1": "Административен панел",
     "id": "ID",
@@ -65,6 +72,19 @@
     "tab-users-server-err": "Сървърна грешка",
     "save-user-save-alert": "Грешка при записване на потребителя",
     "save-user-server-err": "Сървърна грешка"
+  },
+  "AdminControlsPage": {
+    "h1": "Списък с контролни",
+    "id": "ID",
+    "user": "Потребителско име",
+    "section": "Секция",
+    "region": "Регион",
+    "action": "Действия"
+  },
+  "AdminCreatePage": {
+    "type": "Тип",
+    "name": "Име",
+    "create-btn": "Създай"
   },
   "Header": {
     "back-btn": "Назад",

@@ -3,7 +3,7 @@ import ControlButton from "@/components/ui/btn-control";
 import { getTranslations } from "next-intl/server";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
-import Link from "next/link";
+import GlassLink from "@/components/ui/link-glass";
 
 type Control = {
   region_name: string;
@@ -33,39 +33,24 @@ export default async function Page() {
     console.log("JWT decode error:", err);
   }
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/my-controls`, {
-    method: "GET",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-      Cookie: `userRegistered=${token}`,
-    },
-    cache: "no-store",
-  });
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/my-controls`,
+    {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        Cookie: `userRegistered=${token}`,
+      },
+      cache: "no-store",
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch controls");
   }
 
   const { success, data } = await response.json();
-
-  if (!success || !data || data.length === 0) {
-    return (
-      <main className="flex flex-col items-center pt-16">
-        <H1>{t("h1")}</H1>
-        {/* Показваме бутона, ако е админ */}
-        {(role === "admin" || role === "power_admin") && (
-          <Link
-            href="/admin"
-            className="bg-yellow-500 hover:bg-yellow-400 text-black py-2 px-2 rounded-lg font-semibold mt-4"
-          >
-            {t("admin-panel")}
-          </Link>
-        )}
-        <p className="mt-4 text-gray-400">{t("controls-not-exists")}</p>
-      </main>
-    );
-  }
 
   const controls: Control[] = data;
 
@@ -82,19 +67,17 @@ export default async function Page() {
       <H1 className="text-white/70 my-8">{t("h1")}</H1>
 
       {(role === "admin" || role === "power_admin") && (
-        <Link
+        <GlassLink
           href="/admin"
-          className="bg-yellow-500 hover:bg-yellow-400 text-black py-2 px-2  rounded-lg font-semibold mb-6"
+          className="bg-gray-800/30 px-4 py-2 mb-6"
+          textSize="!capitalize"
         >
           {t("admin-panel")}
-        </Link>
+        </GlassLink>
       )}
 
       {Object.entries(grouped).map(([region, sections]) => (
-        <section
-          key={region}
-          className="w-full bg-gray-800 p-4 rounded-lg mb-6"
-        >
+        <section key={region} className="w-full bg-gray-900 p-4 mb-6">
           <p className="text-lg font-bold text-white/60 mb-2">
             {t("region")}: {region}
           </p>
