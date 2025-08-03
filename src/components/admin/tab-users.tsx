@@ -28,6 +28,12 @@ type Labels = {
   role: string;
   status: string;
   actions: string;
+  actionsBtn: string;
+  tabUsersLoadingErr: string;
+  tabUsersServerErr: string;
+  saveUserSaveAlert: string;
+  saveUserServerErr: string;
+  loading: string;
 };
 
 export default function UsersTab({
@@ -65,10 +71,10 @@ export default function UsersTab({
       if (data.success) {
         setUsers(data.data);
       } else {
-        setError("Грешка при зареждане на потребителите");
+        setError(labels.tabUsersLoadingErr);
       }
     } catch (err) {
-      setError("Сървърна грешка");
+      setError(labels.tabUsersServerErr);
     } finally {
       setLoading(false);
     }
@@ -127,14 +133,14 @@ export default function UsersTab({
         await fetchUsers();
         setEditUser(null);
       } else {
-        alert("Грешка при записване на потребителя");
+        alert(labels.saveUserSaveAlert);
       }
     } catch (_err) {
-      alert("Сървърна грешка");
+      alert(labels.saveUserServerErr);
     }
   }
 
-  if (loading) return <p className="text-white">Зареждане...</p>;
+  if (loading) return <p className="text-white">{labels.loading}</p>;
   if (error) return <p className="text-red-500">{error}</p>;
 
   return (
@@ -170,7 +176,7 @@ export default function UsersTab({
                   onClick={() => handleEditClick(u.id)}
                   className="bg-gray-800/30 px-4 py-2"
                 >
-                  Промени
+                  {labels.actionsBtn}
                 </GlassButton>
               </td>
             </tr>

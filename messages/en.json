@@ -61,17 +61,19 @@
     "dashboard": "Dashboard"
   },
   "AdminUsersPage": {
-    "h1": "Administration panel",
+    "h1": "All Users",
     "id": "ID",
     "user": "Username",
     "email": "Email",
     "role": "Role",
     "status": "Status",
     "actions": "Actions",
+    "actions-btn": "Change",
     "tab-users-loading-err": "Error on loading users",
     "tab-users-server-err": "Server error",
     "save-user-save-alert": "Error on save users",
-    "save-user-server-err": "Server error"
+    "save-user-server-err": "Server error",
+    "loading": "Loading..."
   },
   "AdminControlsPage": {
     "h1": "Controls List",

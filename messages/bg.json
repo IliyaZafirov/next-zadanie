@@ -61,17 +61,19 @@
     "dashboard": "Потребителски Панел"
   },
   "AdminUsersPage": {
-    "h1": "Административен панел",
+    "h1": "Всички потребители",
     "id": "ID",
     "user": "Потребителско име",
     "email": "Имейл",
     "role": "Роля",
     "status": "Статус",
     "actions": "Действия",
-    "tab-users-loading-err": "Грешка при зареждане на потребители",
+    "actions-btn": "Промени",
+    "tab-users-loading-err": "Грешка при зареждане на потребителите",
     "tab-users-server-err": "Сървърна грешка",
     "save-user-save-alert": "Грешка при записване на потребителя",
-    "save-user-server-err": "Сървърна грешка"
+    "save-user-server-err": "Сървърна грешка",
+    "loading": "Зареждане..."
   },
   "AdminControlsPage": {
     "h1": "Списък с контролни",

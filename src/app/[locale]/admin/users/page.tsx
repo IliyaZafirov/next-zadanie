@@ -43,6 +43,12 @@ export default async function Page() {
           role: t("role"),
           status: t("status"),
           actions: t("actions"),
+          actionsBtn: t("actions-btn"),
+          tabUsersLoadingErr: t("tab-users-loading-err"),
+          tabUsersServerErr: t("tab-users-server-err"),
+          saveUserSaveAlert: t("save-user-save-alert"),
+          saveUserServerErr: t("save-user-server-err"),
+          loading: t("loading"),
         }}
       />
     </main>
