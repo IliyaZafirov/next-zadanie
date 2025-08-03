@@ -29,6 +29,8 @@ type Labels = {
   status: string;
   actions: string;
   actionsBtn: string;
+  actionsHandleErrDataLoading: string;
+  actionsHandleServerErr: string;
   tabUsersLoadingErr: string;
   tabUsersServerErr: string;
   saveUserSaveAlert: string;
@@ -36,12 +38,31 @@ type Labels = {
   loading: string;
 };
 
+ type EditUserLabels = {
+  editUserHandleConfirm: string;
+  editUserH2: string;
+  editUserLabelRole: string;
+  editUserDisableRoleChange: string;
+  editUserLabelNewPass: string;
+  editUserNewPassPlaceholder: string;
+  editUserLabelStatus: string;
+  editUserActiveStatus: string;
+  editUserInactiveStatus: string;
+  editUserDisableStatusChange: string;
+  editUserLabelControlAccess: string;
+  editUserLoadingControls: string;
+  editUserButtonCancel: string;
+  editUserButtonSave: string;
+}
+
 export default function UsersTab({
   currentUserRole,
   labels,
+  editUserLabels
 }: {
   currentUserRole?: "admin" | "power_admin" | null;
   labels: Labels;
+  editUserLabels: EditUserLabels;
 }) {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
@@ -108,11 +129,11 @@ export default function UsersTab({
           allControls: controlsData.data,
         });
       } else {
-        alert("Грешка при зареждане на данните");
+        alert(labels.actionsHandleErrDataLoading);
       }
     } catch (err) {
       console.log(err);
-      alert("Сървърна грешка");
+      alert(labels.actionsHandleServerErr);
     }
   }
 
@@ -190,6 +211,7 @@ export default function UsersTab({
           user={editUser}
           onClose={() => setEditUser(null)}
           onSave={handleSaveUser}
+          editUserLabels={editUserLabels}
         />
       )}
     </div>

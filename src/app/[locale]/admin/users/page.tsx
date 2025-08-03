@@ -44,11 +44,29 @@ export default async function Page() {
           status: t("status"),
           actions: t("actions"),
           actionsBtn: t("actions-btn"),
+          actionsHandleErrDataLoading: t("actions-handle-err-data-loading"),
+          actionsHandleServerErr: t("actions-handle-server-err"),
           tabUsersLoadingErr: t("tab-users-loading-err"),
           tabUsersServerErr: t("tab-users-server-err"),
           saveUserSaveAlert: t("save-user-save-alert"),
           saveUserServerErr: t("save-user-server-err"),
           loading: t("loading"),
+        }}
+        editUserLabels={{
+          editUserHandleConfirm: t("edit-user-handle-confirm"),
+          editUserH2: t("edit-user-h2"),
+          editUserLabelRole: t("edit-user-label-role"),
+          editUserDisableRoleChange: t("edit-user-disable-role-change"),
+          editUserLabelNewPass: t("edit-user-label-new-pass"),
+          editUserNewPassPlaceholder: t("edit-user-new-pass-placeholder"),
+          editUserLabelStatus: t("edit-user-label-status"),
+          editUserActiveStatus: t("edit-user-active-status"),
+          editUserInactiveStatus: t("edit-user-inactive-status"),
+          editUserDisableStatusChange: t("edit-user-disable-status-change"),
+          editUserLabelControlAccess: t("edit-user-label-control-access"),
+          editUserLoadingControls: t("edit-user-loading-controls"),
+          editUserButtonCancel: t("edit-user-button-cancel"),
+          editUserButtonSave: t("edit-user-button-save"),
         }}
       />
     </main>
