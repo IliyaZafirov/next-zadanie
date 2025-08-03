@@ -24,7 +24,6 @@ export default async function Page() {
 
   let safeRole: "admin" | "power_admin" | null = null;
 
-  // must check
   if (role === "admin" || role === "power_admin") {
     safeRole = role;
   }

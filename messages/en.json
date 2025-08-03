@@ -94,6 +94,14 @@
     "message-error": "Error during creating!",
     "message-server-error": "Server error"
   },
+  "AdminControlsEventsPage": {
+    "h1": "Control Events",
+    "control-id": "ID",
+    "username": "Username",
+    "type": "Type",
+    "details": "Details",
+    "date": "Date"
+  },
   "Header": {
     "back-btn": "Back",
     "exit-btn": "Exit"

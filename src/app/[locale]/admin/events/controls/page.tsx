@@ -1,29 +1,48 @@
 import ControlsEventsList from "@/components/admin/controls-events-list";
+import { cookies } from "next/headers";
+import jwt from "jsonwebtoken";
+import AdminNavigation from "@/components/admin/nav-admin";
+import { getTranslations } from "next-intl/server";
 
 export default async function Page() {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/controls`,
-      {
-        credentials: "include",
-      }
-    );
-    const data = await res.json();
-    if (!data.success) {
-      throw new Error("Something went wrong.");
-    }
+  const t = await getTranslations("AdminControlsEventsPage");
 
-    console.log(data);
-  } catch (err) {
-    console.log(err);
+  const cookieStore = await cookies();
+  const token = cookieStore.get("userRegistered")?.value;
+
+  let role: string | null = null;
+
+  if (token) {
+    try {
+      const decoded = jwt.decode(token) as { id: number; role?: string } | null;
+      role = decoded?.role || null;
+    } catch (err) {
+      role = null;
+    }
   }
 
+  let safeRole: "admin" | "power_admin" | null = null;
+
+  if (role === "admin" || role === "power_admin") {
+    safeRole = role;
+  }
+
+  const isAdmin = role === "admin" || role === "power_admin";
+
   return (
-    <>
-      <div></div>
-      <div>
-        <ControlsEventsList />
-      </div>
-    </>
+    <main className="mt-26 p-6">
+      {isAdmin && <AdminNavigation />}
+
+      <ControlsEventsList
+        labels={{
+          h1: t("h1"),
+          controlId: t("control-id"),
+          username: t("username"),
+          type: t("type"),
+          details: t("details"),
+          date: t("date"),
+        }}
+      />
+    </main>
   );
 }

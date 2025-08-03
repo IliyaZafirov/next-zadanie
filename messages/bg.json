@@ -94,6 +94,14 @@
     "message-error": "Грешка при създаване",
     "message-server-error": "Сървърна грешка"
   },
+  "AdminControlsEventsPage": {
+    "h1": "Контролни  Събития",
+    "control-id": "ID",
+    "username": "Потребителско име",
+    "type": "Тип",
+    "details": "Детайли",
+    "date": "Дата"
+  },
   "Header": {
     "back-btn": "Назад",
     "exit-btn": "Изход"
