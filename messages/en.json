@@ -82,9 +82,17 @@
     "action": "Action"
   },
   "AdminCreatePage": {
+    "h1": "Create",
     "type": "Type",
     "name": "Name",
-    "create-btn": "Create"
+    "region": "Region",
+    "section": "Section",
+    "choose": "Choose",
+    "control": "Control",
+    "create-btn": "Create",
+    "message-success": "Successfully created!",
+    "message-error": "Error during creating!",
+    "message-server-error": "Server error"
   },
   "Header": {
     "back-btn": "Back",

@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
-
 * {
   box-sizing: border-box;
-
 }
 
-html, body {
+html,
+body {
   @apply bg-black text-white;
 }
 
-input, textarea, select {
+input,
+textarea,
+select,
+option {
   @apply bg-white/10 text-white;
+}
+
+option {
+  @apply bg-gray-800 text-white;
 }
 
 /* Spinner */

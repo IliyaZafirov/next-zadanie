@@ -82,9 +82,17 @@
     "action": "Действия"
   },
   "AdminCreatePage": {
+    "h1": "Създай",
     "type": "Тип",
     "name": "Име",
-    "create-btn": "Създай"
+    "region": "Регион",
+    "section": "Секция",
+    "choose": "Изберете",
+    "control": "Контрола",
+    "create-btn": "Създай",
+    "message-success": "Създадено успешно!",
+    "message-error": "Грешка при създаване",
+    "message-server-error": "Сървърна грешка"
   },
   "Header": {
     "back-btn": "Назад",
