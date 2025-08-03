@@ -51,9 +51,12 @@ export default function EditUser({
 
   async function fetchControls() {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/controls`, {
-        credentials: "include",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/controls`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await res.json();
       if (data.success) {
         setAllControls(data.data);
@@ -74,6 +77,12 @@ export default function EditUser({
   };
 
   const handleSubmit = () => {
+    const confirm = window.confirm(
+      "Сигурни ли сте, че искате да запазите промените?"
+    );
+
+    if (!confirm) return;
+
     onSave({
       role,
       password: password || undefined,

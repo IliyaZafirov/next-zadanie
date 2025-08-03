@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import H1 from "@/components/h1";
 import GlassLink from "@/components/ui/link-glass";
+import GlassButton from "@/components/ui/btn-glass";
 
 export default function Page() {
   const [type, setType] = useState<"region" | "section" | "control">("region");
@@ -73,7 +74,7 @@ export default function Page() {
   };
 
   return (
-    <main className="p-6">
+    <main className="mt-26 p-6">
       <H1 className="mb-4">
         Must Fix this h1 Create
         {/* {t("h1")} */}
@@ -81,47 +82,47 @@ export default function Page() {
 
       {/* Must fix this Nav - no auth now  */}
       <div className="flex gap-4 mb-6">
-      <GlassLink
-        href="/admin/users"
-        className="bg-gray-800/30 px-4 py-2"
-        textSize="!capitalize"
-      >
-        Users {/* {t("controls")} */}
-      </GlassLink>
-      <GlassLink
-        href="/admin/controls"
-        className="bg-gray-800/30 px-4 py-2"
-        textSize="!capitalize"
-      >
-        Controls {/* {t("controls")} */}
-      </GlassLink>
-      <GlassLink
-        href="/admin/create"
-        className="bg-gray-800/30 px-4 py-2"
-        textSize="!capitalize"
-      >
-        Create {/* {t("create")} */}
-      </GlassLink>
-      <GlassLink
-        href="/admin/events"
-        className="bg-gray-800/30 px-4 py-2"
-        textSize="!capitalize"
-      >
-        Events
-      </GlassLink>
-      <GlassLink
-        href="/dashboard"
-        className="bg-gray-800/30 px-4 py-2"
-        textSize="!capitalize"
-      >
-        Dashboard
-      </GlassLink>
-    </div>
+        <GlassLink
+          href="/admin/users"
+          className="bg-gray-800/30 px-4 py-2"
+          textSize="!capitalize"
+        >
+          Users {/* {t("controls")} */}
+        </GlassLink>
+        <GlassLink
+          href="/admin/controls"
+          className="bg-gray-800/30 px-4 py-2"
+          textSize="!capitalize"
+        >
+          Controls {/* {t("controls")} */}
+        </GlassLink>
+        <GlassLink
+          href="/admin/create"
+          className="bg-gray-800/30 px-4 py-2"
+          textSize="!capitalize"
+        >
+          Create {/* {t("create")} */}
+        </GlassLink>
+        <GlassLink
+          href="/admin/events"
+          className="bg-gray-800/30 px-4 py-2"
+          textSize="!capitalize"
+        >
+          Events List
+        </GlassLink>
+        <GlassLink
+          href="/dashboard"
+          className="bg-gray-800/30 px-4 py-2"
+          textSize="!capitalize"
+        >
+          Dashboard
+        </GlassLink>
+      </div>
       {/* {isAdmin && <AdminNavigation />} */}
-      <div className="flex justify-center items-center">
+      <div className="flex">
         <form
           onSubmit={handleSubmit}
-          className=" bg-gray-800 p-4 rounded-lg text-white max-w-lg"
+          className=" bg-gray-900 p-4  text-white max-w-lg"
         >
           <label className="block mb-2">Тип</label>
           <select
@@ -163,13 +164,12 @@ export default function Page() {
               </select>
             </>
           )}
-
-          <button
+          <GlassButton
             type="submit"
-            className="bg-amber-600 hover:bg-amber-500 px-4 py-2 rounded"
+            className="bg-gray-800/30 px-4 py-2 text-sm mt-4"
           >
             Създай
-          </button>
+          </GlassButton>
 
           {message && <p className="mt-4 text-green-400">{message}</p>}
         </form>

@@ -30,7 +30,7 @@ export default async function Page() {
   const isAdmin = role === "admin" || role === "power_admin";
 
   return (
-    <main className="p-6">
+    <main className="mt-26 p-6">
       <H1 className="mb-4">{t("h1")}</H1>
 
       {isAdmin && <AdminNavigation />}

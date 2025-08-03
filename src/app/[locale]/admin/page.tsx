@@ -27,24 +27,11 @@ export default async function Page() {
   }
 
   const isAdmin = role === "admin" || role === "power_admin";
-  
+
   return (
-    <main className="p-6">
+    <main className="mt-26 p-6">
       <H1 className="mb-4">{t("h1")}</H1>
-
       {isAdmin && <AdminNavigation />}
-
-      {/* <UsersTab
-        currentUserRole={safeRole}
-        labels={{
-          id: t("id"),
-          user: t("user"),
-          email: t("email"),
-          role: t("role"),
-          status: t("status"),
-          actions: t("actions"),
-        }}
-      /> */}
     </main>
   );
 }

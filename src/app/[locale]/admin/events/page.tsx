@@ -1,9 +1,9 @@
 import H1 from "@/components/h1";
 import { getTranslations } from "next-intl/server";
-import EventsList from "@/components/admin/events-list";
 import AdminNavigation from "@/components/admin/nav-admin";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
+import EventsNavigation from "@/components/admin/nav-events";
 
 export default async function Page() {
   const t = await getTranslations("AdminUsersPage"); // must fix
@@ -32,12 +32,11 @@ export default async function Page() {
   const isAdmin = role === "admin" || role === "power_admin";
 
   return (
-    <main className="p-6">
+    <main className="mt-26 p-6">
       <H1 className="mb-4">{t("h1")}</H1>
-
       {isAdmin && <AdminNavigation />}
 
-      <EventsList />
+      <EventsNavigation />
     </main>
   );
 }
