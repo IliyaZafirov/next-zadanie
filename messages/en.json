@@ -114,7 +114,9 @@
     "user": "Username",
     "section": "Section",
     "region": "Region",
-    "action": "Action"
+    "action": "Action",
+    "action-btn": "Change",
+    "no-controls": "No controls available."
   },
   "AdminCreatePage": {
     "h1": "Create",

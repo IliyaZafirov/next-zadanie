@@ -68,7 +68,7 @@ export default async function Page() {
     <main className="mt-26 p-6">
       {isAdmin && <AdminNavigation />}
       <H1 className="mb-4">{t("h1")}</H1>
-      
+
       <div className="bg-gray-900 p-4 relative">
         <table className="w-full text-white">
           <thead>
@@ -92,7 +92,7 @@ export default async function Page() {
                     href={`/admin/controls/${c.control_id}`}
                     className="bg-gray-800/30 px-4 py-2 text-sm"
                   >
-                    Промени
+                    {t("action-btn")}
                   </GlassLink>
                 </td>
               </tr>
@@ -102,7 +102,7 @@ export default async function Page() {
       </div>
 
       {controls.length === 0 && (
-        <p className="text-gray-400 mt-4">Няма налични контроли.</p>
+        <p className="text-gray-400 mt-4">{t("no-controls")}</p>
       )}
     </main>
   );
