@@ -13,6 +13,10 @@ export default async function Page() {
           username: t("username"),
           password: t("password"),
         }}
+        links={{
+          register: t("register"),
+          back: t("back"),
+        }}
         returnCase={{
           emptyFieldsCase: t("empty-fields-case"),
           incorrectCase: t("incorrect-case"),

@@ -13,6 +13,11 @@ type Labels = {
   password: string;
 };
 
+type Links = {
+  register: string;
+  back: string;
+};
+
 type ReturnCase = {
   emptyFieldsCase: string;
   incorrectCase: string;
@@ -22,9 +27,11 @@ type ReturnCase = {
 };
 export default function LoginForm({
   labels,
+  links,
   returnCase,
 }: {
   labels: Labels;
+  links: Links;
   returnCase: ReturnCase;
 }) {
   const messageRef = useRef<HTMLDivElement>(null);
@@ -73,12 +80,15 @@ export default function LoginForm({
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await response.json();
 
@@ -104,53 +114,67 @@ export default function LoginForm({
   };
 
   return (
-    <section className="md:border md:border-white/20">
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col w-full h-full justify-center items-center px-14 mt-16 text-white/50"
-      >
-        <FormGroup
-          htmlFor="username"
-          elementType="input"
-          type="username"
-          name="username"
-          onChange={handleOnChange}
-          maxLength={40}
-          required={true}
+    <>
+      <section className="md:border md:border-white/20">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col w-full h-full justify-center items-center px-14 mt-16 text-white/50"
         >
-          {labels.username}
-        </FormGroup>
+          <FormGroup
+            htmlFor="username"
+            elementType="input"
+            type="username"
+            name="username"
+            onChange={handleOnChange}
+            maxLength={40}
+            required={true}
+          >
+            {labels.username}
+          </FormGroup>
 
-        <FormGroup
-          htmlFor="password"
-          elementType="input"
-          type="password"
-          name="password"
-          onChange={handleOnChange}
-          minLength={8}
-          maxLength={40}
-          required={true}
-        >
-          {labels.password}
-        </FormGroup>
-        <div className="flex flex-row justify-center items-center w-full pb-24">
-          <div className="pb-4">
-            {!success && (
-              <RoundedButton type="submit" disabled={success && isSubmit}>
-                {isLoading ? <Spinner /> : returnCase.submit}
-              </RoundedButton>
-            )}
-            {/* <Link href="/forgot" className="text-xs text-white/50 pl-5">
+          <FormGroup
+            htmlFor="password"
+            elementType="input"
+            type="password"
+            name="password"
+            onChange={handleOnChange}
+            minLength={8}
+            maxLength={40}
+            required={true}
+          >
+            {labels.password}
+          </FormGroup>
+          <div className="flex flex-row justify-center items-center w-full pb-24">
+            <div className="pb-4">
+              {!success && (
+                <RoundedButton type="submit" disabled={success && isSubmit}>
+                  {isLoading ? <Spinner /> : returnCase.submit}
+                </RoundedButton>
+              )}
+              {/* <Link href="/forgot" className="text-xs text-white/50 pl-5">
               Forgot Password?
             </Link> */}
-            <div className="absolute ml-auto mr-auto left-0 right-0 text-center pt-4">
-              {!success && (
-                <Message ref={messageRef} success={success} message={message} />
-              )}
+              <div className="absolute ml-auto mr-auto left-0 right-0 text-center pt-4">
+                {!success && (
+                  <Message
+                    ref={messageRef}
+                    success={success}
+                    message={message}
+                  />
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </form>
-    </section>
+        </form>
+      </section>
+      <section className="flex flex-row gap-x-6 mt-4 text-sm text-white/60 mb-16">
+        <Link href="/forgot" className="hover:text-white/90">
+          {links.register}
+        </Link>
+        <Link href="/" className="hover:text-white/90">
+          {links.back}
+        </Link>
+      </section>
+    </>
   );
 }

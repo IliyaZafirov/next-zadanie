@@ -45,6 +45,8 @@
     "incorrect-case": "Incorrect username or password.",
     "success-case": "Successfully logged in.",
     "error-case": "An error occurred while logging in.",
+    "register": "Регистрация",
+    "back": "Назад",
     "submit": "Login"
   },
   "DashboardPage": {
