@@ -55,7 +55,7 @@ export default function Navigation({ labels }: { labels: Labels }) {
 
             if (res.ok) {
               Cookies.remove("userRegistered");
-
+              setIsLoggedIn(false);
               router.push("/");
             } else {
               console.log("Logout failed");
