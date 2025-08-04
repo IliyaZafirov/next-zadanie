@@ -47,10 +47,27 @@ export default function ControlEditForm({
           body: JSON.stringify({ users: selectedUsers }),
         }
       );
-
+  
       const data = await res.json();
       if (data.success) {
         setMessage("Запазено успешно!");
+  
+        try {
+          await fetch(
+            `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/change-control-event`,
+            {
+              method: "POST",
+              credentials: "include",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                control_id: controlId,
+                changed_at: new Date().toISOString(),
+              }),
+            }
+          );
+        } catch (logErr) {
+          console.error(logErr);
+        }
       } else {
         setMessage("Грешка при запазване");
       }

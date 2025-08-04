@@ -79,7 +79,7 @@ export default function EditUser({
         setAllControls(data.data);
       }
     } catch (err) {
-      console.log("Грешка при зареждане на контролите", err);
+      console.log(err);
     } finally {
       setLoadingControls(false);
     }
@@ -93,7 +93,7 @@ export default function EditUser({
     );
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const confirm = window.confirm(editUserLabels.editUserHandleConfirm);
 
     if (!confirm) return;
@@ -104,6 +104,18 @@ export default function EditUser({
       active,
       controls,
     });
+
+    try {
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/change-user-event`,
+        {
+          method: "POST",
+          credentials: "include",
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const disableRoleChange =
