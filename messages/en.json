@@ -56,7 +56,7 @@
     "region": "Region",
     "sections": "Sections",
     "control-btn": "Control",
-    "admin-panel": "Administration functions"
+    "admin-panel": "Administration Functionality"
   },
   "AdminNavigation": {
     "users": "Users",
@@ -69,7 +69,8 @@
     "registration-events": "Registration Events",
     "change-pass-events": "Change Password Events",
     "controls-events": "Controls Events",
-    "in-out-events": "Login/Logout Events"
+    "in-out-events": "Login/Logout Events",
+    "administrative-events": "Administrative Functionality"
   },
   "AdminPage": {
     "h1": "Administration functions"
@@ -143,6 +144,15 @@
   },
   "AdminChangePassEventsPage": {
     "h1": "Change Password Events",
+    "loading": "Loading...",
+    "control-id": "ID",
+    "username": "Username",
+    "type": "Type",
+    "details": "Details",
+    "date": "Date"
+  },
+  "AdministrativeEventsPage": {
+    "h1": "Administrative Functionality Events",
     "loading": "Loading...",
     "control-id": "ID",
     "username": "Username",

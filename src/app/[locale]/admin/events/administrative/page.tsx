@@ -1,13 +1,11 @@
-import H1 from "@/components/h1";
-import { getTranslations } from "next-intl/server";
-import AdminNavigation from "@/components/admin/nav-admin";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
-import EventsNavigation from "@/components/admin/nav-events";
-import ListsEventsLog from "@/components/admin/lists-events-log";
+import AdminNavigation from "@/components/admin/nav-admin";
+import { getTranslations } from "next-intl/server";
+import AdministrativeEventsList from "@/components/admin/administrative-events-lists";
 
 export default async function Page() {
-  const t = await getTranslations("AdminEventsPage");
+  const t = await getTranslations("AdministrativeEventsPage");
 
   const cookieStore = await cookies();
   const token = cookieStore.get("userRegistered")?.value;
@@ -34,10 +32,18 @@ export default async function Page() {
   return (
     <main className="mt-26 p-6">
       {isAdmin && <AdminNavigation />}
-      <EventsNavigation />
-      <H1 className="mb-4">{t("h1")}</H1>
 
-      {isAdmin && <ListsEventsLog />}
+      <AdministrativeEventsList
+        labels={{
+          h1: t("h1"),
+          loading: t('loading'),
+          controlId: t("control-id"),
+          username: t("username"),
+          type: t("type"),
+          details: t("details"),
+          date: t("date"),
+        }}
+      />
     </main>
   );
 }

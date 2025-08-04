@@ -55,7 +55,7 @@ export default function CreateTab({ labels }: { labels: Labels }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setMessage("");
-
+  
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/create`,
@@ -70,9 +70,21 @@ export default function CreateTab({ labels }: { labels: Labels }) {
           }),
         }
       );
-
+  
       const data = await res.json();
       if (data.success) {
+        try {
+          await fetch(
+            `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/create-event`,
+            {
+              method: "POST",
+              credentials: "include",
+            }
+          );
+        } catch (logErr) {
+          console.log(logErr);
+        }
+  
         setMessage(labels.messageSuccess);
         setName("");
         setParentId("");

@@ -69,7 +69,8 @@
     "registration-events": "Събития Регистрация",
     "change-pass-events": "Събития Смяна на Парола",
     "controls-events": "Събития Контролни",
-    "in-out-events": "Събития Вписване/Излизане"
+    "in-out-events": "Събития Вписване/Излизане",
+    "administrative-events": "Адиминистративни Функционалности"
   },
   "AdminPage": {
     "h1": "Административни функционалности"
@@ -143,6 +144,15 @@
   },
   "AdminChangePassEventsPage": {
     "h1": "Събития Смяна на парола",
+    "loading": "Зареждане...",
+    "control-id": "ID",
+    "username": "Потребителско име",
+    "type": "Тип",
+    "details": "Детайли",
+    "date": "Дата"
+  },
+  "AdministrativeEventsPage": {
+    "h1": "Събития Административни Функционалности",
     "loading": "Зареждане...",
     "control-id": "ID",
     "username": "Потребителско име",
