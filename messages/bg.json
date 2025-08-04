@@ -60,6 +60,9 @@
     "events-lists": "Списък Събития",
     "dashboard": "Потребителски Панел"
   },
+  "AdminPage": {
+    "h1": "Административни функционалности"
+  },
   "AdminUsersPage": {
     "h1": "Всички потребители",
     "id": "ID",
@@ -91,6 +94,10 @@
     "save-user-server-err": "Сървърна грешка",
     "loading": "Зареждане..."
   },
+  "AdminEventsPage": {
+    "h1": "Списък събития"
+  },
+
   "AdminControlsPage": {
     "h1": "Списък с контролни",
     "id": "ID",

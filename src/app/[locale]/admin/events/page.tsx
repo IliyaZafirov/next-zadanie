@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 import EventsNavigation from "@/components/admin/nav-events";
 
 export default async function Page() {
-  const t = await getTranslations("AdminControlsEventsPage"); // must fix
+  const t = await getTranslations("AdminEventsPage");
 
   const cookieStore = await cookies();
   const token = cookieStore.get("userRegistered")?.value;

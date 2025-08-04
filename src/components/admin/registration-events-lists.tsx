@@ -21,7 +21,7 @@ type Labels = {
   date: string;
 };
 
-export default function ControlsEventsList({ labels }: { labels: Labels }) {
+export default function RegistrationEventsList({ labels }: { labels: Labels }) {
   const [events, setEvents] = useState<EventItem[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,7 +32,7 @@ export default function ControlsEventsList({ labels }: { labels: Labels }) {
   async function fetchEvents() {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/controls-events`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/registration-events`,
         {
           credentials: "include",
         }

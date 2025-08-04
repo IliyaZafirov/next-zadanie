@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import AdminNavigation from "@/components/admin/nav-admin";
 
 export default async function Page() {
-  const t = await getTranslations("AdminUsersPage");
+  const t = await getTranslations("AdminPage");
   const cookieStore = await cookies();
   const token = cookieStore.get("userRegistered")?.value;
 
