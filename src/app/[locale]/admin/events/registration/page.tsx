@@ -1,4 +1,3 @@
-import ControlsEventsList from "@/components/admin/controls-events-list";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import AdminNavigation from "@/components/admin/nav-admin";

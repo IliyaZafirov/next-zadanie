@@ -16,7 +16,7 @@ export default async function Page() {
           submit: t("submit"),
         }}
         links={{
-          forgotPassword: t("forgot-password"),
+          register: t("register"),
           back: t("back"),
         }}
         returnCase={{

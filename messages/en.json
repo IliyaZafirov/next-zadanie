@@ -33,7 +33,7 @@
     "success-case": "Password Updated.",
     "error-case": "An error occurred. Please try again.",
     "submit": "Change Password",
-    "forgot-password": "Forgot Password",
+    "register": "Register",
     "back": "Back",
     "pass-not-match-case": "Passwords do not match!"
   },

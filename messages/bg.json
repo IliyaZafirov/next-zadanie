@@ -33,8 +33,8 @@
     "success-case": "Паролата е обновена.",
     "error-case": "Възникна грешка. Моля опитайте отново.",
     "submit": "Смени Парола",
-    "forgot-password": "Forgot Password",
-    "back": "Back",
+    "register": "Регистрация",
+    "back": "Назад",
     "pass-not-match-case": "Паролите не съвпадат!"
   },
   "LoginPage": {
