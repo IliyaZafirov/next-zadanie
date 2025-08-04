@@ -43,7 +43,27 @@ export default function Navigation({ labels }: { labels: Labels }) {
         {labels.backBtn}
       </button>
       <button
-        onClick={() => router.push("/")}
+        onClick={async () => {
+          try {
+            const res = await fetch(
+              `${process.env.NEXT_PUBLIC_BACKEND_URL}/logout`,
+              {
+                method: "GET",
+                credentials: "include",
+              }
+            );
+
+            if (res.ok) {
+              Cookies.remove("userRegistered");
+
+              router.push("/");
+            } else {
+              console.log("Logout failed");
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        }}
         className="bg-emerald-800 py-2 px-4 hover:text-gray-400 transition-colors duration-200"
       >
         {labels.exitBtn}
