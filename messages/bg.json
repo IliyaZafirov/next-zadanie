@@ -131,6 +131,7 @@
   },
   "AdminRegisterEventsPage": {
     "h1": "Събития Регистрация",
+    "loading": "Зареждане...",
     "control-id": "ID",
     "username": "Потребителско име",
     "type": "Тип",
@@ -139,6 +140,7 @@
   },
   "AdminChangePassEventsPage": {
     "h1": "Събития Смяна на парола",
+    "loading": "Зареждане...",
     "control-id": "ID",
     "username": "Потребителско име",
     "type": "Тип",
@@ -147,6 +149,7 @@
   },
   "AdminControlsEventsPage": {
     "h1": "Събития Контролни",
+    "loading": "Зареждане...",
     "control-id": "ID",
     "username": "Потребителско име",
     "type": "Тип",
@@ -155,6 +158,7 @@
   },
   "AdminInOutEventsPage": {
     "h1": "Събития Вписване/Излизане",
+    "loading": "Зареждане...",
     "control-id": "ID",
     "username": "Потребителско име",
     "type": "Тип",

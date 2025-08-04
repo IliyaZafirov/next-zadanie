@@ -14,6 +14,7 @@ type EventItem = {
 
 type Labels = {
   h1: string;
+  loading: string;
   controlId: string | number;
   username: string;
   type: string;
@@ -50,7 +51,7 @@ export default function InOutEventsList({ labels }: { labels: Labels }) {
     }
   }
 
-  if (loading) return <p className="text-white">Зареждане...</p>;
+  if (loading) return <p className="text-white">{labels.loading}</p>;
 
   return (
     <>
@@ -59,7 +60,7 @@ export default function InOutEventsList({ labels }: { labels: Labels }) {
 
       <div className="bg-gray-900 p-4">
         <table className="w-full text-white text-sm">
-          <thead>
+          <thead className="hidden md:table-header-group">
             <tr className="border-b border-gray-600">
               <th className="p-2 text-left">{labels.controlId}</th>
               <th className="p-2 text-left">{labels.username}</th>
@@ -70,16 +71,40 @@ export default function InOutEventsList({ labels }: { labels: Labels }) {
           </thead>
           <tbody>
             {events.map((e) => (
-              <tr key={e.id} className="border-b border-gray-700">
-                <td className="p-2">{e.id}</td>
-                <td className="p-2">{e.username || "—"}</td>
-                <td className="p-2">{e.type}</td>
-                <td className="p-2">
+              <tr
+                key={e.id}
+                className="border-b border-gray-700 block md:table-row mb-4 md:mb-0"
+              >
+                <td
+                  data-label={labels.controlId}
+                  className="p-2 block md:table-cell md:p-2 before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
+                  {e.id}
+                </td>
+                <td
+                  data-label={labels.username}
+                  className="p-2 block md:table-cell before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
+                  {e.username || "—"}
+                </td>
+                <td
+                  data-label={labels.type}
+                  className="p-2 block md:table-cell before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
+                  {e.type}
+                </td>
+                <td
+                  data-label={labels.details}
+                  className="p-2 block md:table-cell before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
                   <pre className="whitespace-pre-wrap text-gray-300">
                     {e.details}
                   </pre>
                 </td>
-                <td className="p-2">
+                <td
+                  data-label={labels.date}
+                  className="p-2 block md:table-cell before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
                   {new Date(e.created_at).toLocaleString()}
                 </td>
               </tr>

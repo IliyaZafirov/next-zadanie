@@ -36,6 +36,7 @@ export default async function Page() {
       <RegistrationEventsList
         labels={{
           h1: t("h1"),
+          loading: t('loading'),
           controlId: t("control-id"),
           username: t("username"),
           type: t("type"),

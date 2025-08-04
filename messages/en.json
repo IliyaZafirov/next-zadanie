@@ -131,6 +131,7 @@
   },
   "AdminRegisterEventsPage": {
     "h1": "Register Events",
+    "loading": "Loading...",
     "control-id": "ID",
     "username": "Username",
     "type": "Type",
@@ -138,7 +139,8 @@
     "date": "Date"
   },
   "AdminChangePassEventsPage": {
-    "h1": "Register Events",
+    "h1": "Change Password Events",
+    "loading": "Loading...",
     "control-id": "ID",
     "username": "Username",
     "type": "Type",
@@ -147,6 +149,7 @@
   },
   "AdminControlsEventsPage": {
     "h1": "Control Events",
+    "loading": "Loading...",
     "control-id": "ID",
     "username": "Username",
     "type": "Type",
@@ -155,6 +158,7 @@
   },
   "AdminInOutEventsPage": {
     "h1": "Login/Logout Events",
+    "loading": "Loading...",
     "control-id": "ID",
     "username": "Username",
     "type": "Type",
