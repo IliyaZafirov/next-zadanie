@@ -34,6 +34,7 @@ export default function ControlsEventsList({ labels }: { labels: Labels }) {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/admin/controls-events`,
         {
+          cache: "no-store",
           credentials: "include",
         }
       );
