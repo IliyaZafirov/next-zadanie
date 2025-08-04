@@ -22,7 +22,7 @@ export default function LangSwitch() {
 
   return (
     // {locale === 'en' ? 'BG' : 'EN'}
-    <div className="flex gap-2">
+    <div className="flex gap-4">
       <button onClick={() => switchLocale("en")} disabled={locale === "en"} className="hover:text-gray-400">
         EN
       </button>

@@ -38,7 +38,7 @@ export default function Navigation({ labels }: { labels: Labels }) {
       <button
         type="button"
         onClick={() => router.back()}
-        className="bg-emerald-800 py-2 px-4 hover:text-gray-400 transition-colors duration-200"
+        className="bg-emerald-800 text-xs md:text-base py-2 px-2 md:px-4 hover:text-gray-400 transition-colors duration-200"
       >
         {labels.backBtn}
       </button>
@@ -64,7 +64,7 @@ export default function Navigation({ labels }: { labels: Labels }) {
             console.log(err);
           }
         }}
-        className="bg-emerald-800 py-2 px-4 hover:text-gray-400 transition-colors duration-200"
+        className="bg-emerald-800 text-xs md:text-base py-2 px-2 md:px-4 hover:text-gray-400 transition-colors duration-200"
       >
         {labels.exitBtn}
       </button>

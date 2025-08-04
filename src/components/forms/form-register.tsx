@@ -96,13 +96,16 @@ export default function RegisterForm({
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await response.json();
       console.log(result);
@@ -134,7 +137,7 @@ export default function RegisterForm({
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-[30vw] h-full justify-center items-center py-14 px-14 text-white/50 border border-white/20"
+        className="flex flex-col w-[30vw] h-full justify-center items-center py-14 px-14 text-white/50 md:border md:border-white/20"
       >
         <section className="flex flex-col md:flex-row justify-center md:space-x-24">
           <div>
@@ -220,7 +223,7 @@ export default function RegisterForm({
           <Message ref={messageRef} success={success} message={message} />
         </section>
       </form>
-      <section className="flex flex-row gap-x-6 mt-4 text-sm text-white/60">
+      <section className="flex flex-row gap-x-6 mt-4 text-sm text-white/60 mb-16">
         <Link href="/forgot">{links.forgotPassword}</Link>
         <Link href="/">{links.back}</Link>
       </section>

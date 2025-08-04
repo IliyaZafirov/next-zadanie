@@ -32,7 +32,10 @@
     "email-not-found": "This email address is not found.",
     "success-case": "Password Updated.",
     "error-case": "An error occurred. Please try again.",
-    "submit": "Change Password"
+    "submit": "Change Password",
+    "forgot-password": "Forgot Password",
+    "back": "Back",
+    "pass-not-match-case": "Passwords do not match!"
   },
   "LoginPage": {
     "h1": "Login",
@@ -59,6 +62,12 @@
     "create": "Create",
     "events-lists": "Events Lists",
     "dashboard": "Dashboard"
+  },
+  "AdminEventsNavigation": {
+    "registration-events": "Registration Events",
+    "change-pass-events": "Change Password Events",
+    "controls-events": "Controls Events",
+    "in-out-events": "Login/Logout Events"
   },
   "AdminPage": {
     "h1": "Administration functions"

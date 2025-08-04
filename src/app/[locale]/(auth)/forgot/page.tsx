@@ -15,10 +15,15 @@ export default async function Page() {
           confirmNewPassword: t("confirm-new-password"),
           submit: t("submit"),
         }}
+        links={{
+          forgotPassword: t("forgot-password"),
+          back: t("back"),
+        }}
         returnCase={{
           emailNotFound: t("email-not-found"),
           successCase: t("success-case"),
           errorCase: t("error-case"),
+          passNotMatchCase: t('pass-not-match-case')
         }}
       />
     </main>

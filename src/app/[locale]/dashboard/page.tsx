@@ -63,7 +63,7 @@ export default async function Page() {
   }, {});
 
   return (
-    <main className="flex flex-col items-center pt-16 w-full max-w-4xl mx-auto">
+    <main className="flex flex-col items-center my-16 pt-16 w-full max-w-4xl mx-auto">
       <H1 className="text-white/70 my-8">{t("h1")}</H1>
 
       {(role === "admin" || role === "power_admin") && (

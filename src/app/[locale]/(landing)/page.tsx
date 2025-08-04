@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 export default async function HomePage() {
   const t = await getTranslations("HomePage");
   return (
-    <main className="flex flex-col flex-grow items-center px-3 sm:pt-2 md:pt-16 lg:pt-16 overflow-auto">
+    <main className="flex flex-col flex-grow items-center my-16 pt-16 px-3 sm:pt-2 md:pt-16 lg:pt-16 overflow-auto">
       <H1 className=" mt-4">{t("h1")}</H1>
 
       <section className="flex flex-row gap-x-4 mt-16">

@@ -32,7 +32,10 @@
     "email-not-found": "Този имейл адрес не съществува.",
     "success-case": "Паролата е обновена.",
     "error-case": "Възникна грешка. Моля опитайте отново.",
-    "submit": "Смени Парола"
+    "submit": "Смени Парола",
+    "forgot-password": "Forgot Password",
+    "back": "Back",
+    "pass-not-match-case": "Паролите не съвпадат!"
   },
   "LoginPage": {
     "h1": "Вписване",
@@ -59,6 +62,12 @@
     "create": "Създай",
     "events-lists": "Списък Събития",
     "dashboard": "Потребителски Панел"
+  },
+  "AdminEventsNavigation": {
+    "registration-events": "Събития Регистрация",
+    "change-pass-events": "Събития Смяна на Парола",
+    "controls-events": "Събития Контролни",
+    "in-out-events": "Събития Вписване/Излизане"
   },
   "AdminPage": {
     "h1": "Административни функционалности"

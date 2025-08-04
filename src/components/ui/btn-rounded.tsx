@@ -24,7 +24,7 @@ type RoundButtonProps = {
         disabled={disabled}
         className={`${
           className ? className : ""
-        } text-xs text-white px-5 py-3 rounded-md  bg-white/5 opacity-75 active:bg-black/5 active:scale-105 hover:scale-110 hover:opacity-100 transition`}
+        } text-xs text-nowrap text-white px-5 py-3 rounded-md  bg-white/25 opacity-75 active:bg-black/5 active:scale-105 hover:scale-110 hover:opacity-100 transition duration-500`}
       >
         {children}
       </button>
