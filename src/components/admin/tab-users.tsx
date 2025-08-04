@@ -38,7 +38,7 @@ type Labels = {
   loading: string;
 };
 
- type EditUserLabels = {
+type EditUserLabels = {
   editUserHandleConfirm: string;
   editUserH2: string;
   editUserLabelRole: string;
@@ -53,12 +53,12 @@ type Labels = {
   editUserLoadingControls: string;
   editUserButtonCancel: string;
   editUserButtonSave: string;
-}
+};
 
 export default function UsersTab({
   currentUserRole,
   labels,
-  editUserLabels
+  editUserLabels,
 }: {
   currentUserRole?: "admin" | "power_admin" | null;
   labels: Labels;
@@ -165,9 +165,9 @@ export default function UsersTab({
   if (error) return <p className="text-red-500">{error}</p>;
 
   return (
-    <div className="bg-gray-900 p-4  relative">
-      <table className="w-full text-white">
-        <thead>
+    <div className="bg-gray-900 p-4 relative">
+      <table className="w-full text-white text-sm">
+        <thead className="hidden md:table-header-group">
           <tr className="border-b border-gray-600">
             <th className="p-2 text-left">{labels.id}</th>
             <th className="p-2 text-left">{labels.user}</th>
@@ -179,23 +179,52 @@ export default function UsersTab({
         </thead>
         <tbody>
           {users.map((u) => (
-            <tr key={u.id} className="border-b border-gray-700">
-              <td className="p-2">{u.id}</td>
-              <td className="p-2">{u.username}</td>
-              <td className="p-2">{u.email}</td>
-              <td className="p-2">{u.role}</td>
-              {/* <td className="p-2">
+            <tr
+              key={u.id}
+              className="border-b border-gray-700 block md:table-row mb-4 md:mb-0"
+            >
+              <td
+                data-label={labels.id}
+                className="p-2 block md:table-cell md:p-2 before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+              >
+                {u.id}
+              </td>
+              <td
+                data-label={labels.user}
+                className="p-2 block md:table-cell before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+              >
+                {u.username}
+              </td>
+              <td
+                data-label={labels.email}
+                className="p-2 block md:table-cell before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+              >
+                {u.email}
+              </td>
+              <td
+                data-label={labels.role}
+                className="p-2 block md:table-cell before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+              >
+                {u.role}
+              </td>
+              {/* <td
+                data-label={labels.status}
+                className="p-2 block md:table-cell before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+              >
                 {u.active ? (
                   <span className="text-green-400">Активен</span>
                 ) : (
                   <span className="text-red-400">Неактивен</span>
                 )}
               </td> */}
-              <td className="p-2">
+              <td
+                data-label={labels.actions}
+                className="p-2 block md:table-cell before:content-[attr(data-label)] before:block before:font-bold before:text-gray-400 md:before:hidden"
+              >
                 <GlassButton
                   type="button"
                   onClick={() => handleEditClick(u.id)}
-                  className="bg-gray-800/30 px-4 py-2"
+                  className="bg-gray-800/30 px-4 py-2 my-2 md:my-0 md:w-auto"
                 >
                   {labels.actionsBtn}
                 </GlassButton>

@@ -116,7 +116,8 @@
     "region": "Region",
     "action": "Action",
     "action-btn": "Change",
-    "no-controls": "No controls available."
+    "no-controls": "No controls available.",
+    "no-access": "You do not have access to this page."
   },
   "AdminCreatePage": {
     "h1": "Create",

@@ -57,9 +57,7 @@ export default async function Page() {
   }
 
   if (!isAdmin) {
-    return (
-      <main className="p-6 text-red-500">Нямате достъп до тази страница.</main>
-    );
+    return <main className="p-6 text-red-500">{t("no-access")}</main>;
   }
 
   const controls = await getControls();
@@ -70,8 +68,8 @@ export default async function Page() {
       <H1 className="mb-4">{t("h1")}</H1>
 
       <div className="bg-gray-900 p-4 relative">
-        <table className="w-full text-white">
-          <thead>
+        <table className="w-full text-white text-sm">
+          <thead className="hidden md:table-header-group">
             <tr className="border-b border-gray-600">
               <th className="p-2 text-left">{t("id")}</th>
               <th className="p-2 text-left">{t("user")}</th>
@@ -82,15 +80,46 @@ export default async function Page() {
           </thead>
           <tbody>
             {controls.map((c) => (
-              <tr key={c.control_id} className="border-b border-gray-700">
-                <td className="p-2">{c.control_id}</td>
-                <td className="p-2">{c.control_name}</td>
-                <td className="p-2">{c.section_name}</td>
-                <td className="p-2">{c.region_name}</td>
-                <td className="p-2">
+              <tr
+                key={c.control_id}
+                className="border-b border-gray-700 block md:table-row mb-4 md:mb-0"
+              >
+                <td
+                  data-label={t("id")}
+                  className="p-2 block md:table-cell md:p-2 before:content-[attr(data-label)] 
+                             before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
+                  {c.control_id}
+                </td>
+                <td
+                  data-label={t("user")}
+                  className="p-2 block md:table-cell before:content-[attr(data-label)] 
+                             before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
+                  {c.control_name}
+                </td>
+                <td
+                  data-label={t("section")}
+                  className="p-2 block md:table-cell before:content-[attr(data-label)] 
+                             before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
+                  {c.section_name}
+                </td>
+                <td
+                  data-label={t("region")}
+                  className="p-2 block md:table-cell before:content-[attr(data-label)] 
+                             before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
+                  {c.region_name}
+                </td>
+                <td
+                  data-label={t("action")}
+                  className="p-2 block md:table-cell before:content-[attr(data-label)] 
+                             before:block before:font-bold before:text-gray-400 md:before:hidden"
+                >
                   <GlassLink
                     href={`/admin/controls/${c.control_id}`}
-                    className="bg-gray-800/30 px-4 py-2 text-sm"
+                    className="bg-gray-800/30 px-4 py-2 text-sm block md:inline-block mt-2 md:mt-0"
                   >
                     {t("action-btn")}
                   </GlassLink>
