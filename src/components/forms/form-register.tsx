@@ -224,8 +224,8 @@ export default function RegisterForm({
         </section>
       </form>
       <section className="flex flex-row gap-x-6 mt-4 text-sm text-white/60 mb-16">
-        <Link href="/forgot">{links.forgotPassword}</Link>
-        <Link href="/">{links.back}</Link>
+        <Link href="/forgot" className="hover:text-white/90">{links.forgotPassword}</Link>
+        <Link href="/" className="hover:text-white/90">{links.back}</Link>
       </section>
     </>
   );
