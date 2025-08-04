@@ -72,7 +72,7 @@ export default async function Page() {
           <thead className="hidden md:table-header-group">
             <tr className="border-b border-gray-600">
               <th className="p-2 text-left">{t("id")}</th>
-              <th className="p-2 text-left">{t("user")}</th>
+              <th className="p-2 text-left">{t("controls")}</th>
               <th className="p-2 text-left">{t("section")}</th>
               <th className="p-2 text-left">{t("region")}</th>
               <th className="p-2 text-left">{t("action")}</th>
@@ -92,7 +92,7 @@ export default async function Page() {
                   {c.control_id}
                 </td>
                 <td
-                  data-label={t("user")}
+                  data-label={t("controls")}
                   className="p-2 block md:table-cell before:content-[attr(data-label)] 
                              before:block before:font-bold before:text-gray-400 md:before:hidden"
                 >

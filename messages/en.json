@@ -111,7 +111,7 @@
   "AdminControlsPage": {
     "h1": "Controls List",
     "id": "ID",
-    "user": "Username",
+    "controls": "Controls",
     "section": "Section",
     "region": "Region",
     "action": "Action",
