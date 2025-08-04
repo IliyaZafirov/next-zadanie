@@ -97,7 +97,6 @@
   "AdminEventsPage": {
     "h1": "Списък събития"
   },
-
   "AdminControlsPage": {
     "h1": "Списък с контролни",
     "id": "ID",
@@ -119,8 +118,32 @@
     "message-error": "Грешка при създаване",
     "message-server-error": "Сървърна грешка"
   },
+  "AdminRegisterEventsPage": {
+    "h1": "Събития Регистрация",
+    "control-id": "ID",
+    "username": "Потребителско име",
+    "type": "Тип",
+    "details": "Детайли",
+    "date": "Дата"
+  },
+  "AdminChangePassEventsPage": {
+    "h1": "Събития Смяна на парола",
+    "control-id": "ID",
+    "username": "Потребителско име",
+    "type": "Тип",
+    "details": "Детайли",
+    "date": "Дата"
+  },
   "AdminControlsEventsPage": {
-    "h1": "Контролни  Събития",
+    "h1": "Събития Контролни",
+    "control-id": "ID",
+    "username": "Потребителско име",
+    "type": "Тип",
+    "details": "Детайли",
+    "date": "Дата"
+  },
+  "AdminInOutEventsPage": {
+    "h1": "Събития Вписване/Излизане",
     "control-id": "ID",
     "username": "Потребителско име",
     "type": "Тип",

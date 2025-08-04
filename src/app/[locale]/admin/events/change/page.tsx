@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 import ChangePassEventsList from "@/components/admin/change-pass-events-lists";
 
 export default async function Page() {
-  const t = await getTranslations("AdminControlsEventsPage");
+  const t = await getTranslations("AdminChangePassEventsPage");
 
   const cookieStore = await cookies();
   const token = cookieStore.get("userRegistered")?.value;

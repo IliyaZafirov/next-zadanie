@@ -1,13 +1,11 @@
-import ControlsEventsList from "@/components/admin/controls-events-list";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import AdminNavigation from "@/components/admin/nav-admin";
 import { getTranslations } from "next-intl/server";
-import RegistrationEventsList from "@/components/admin/registration-events-lists";
 import InOutEventsList from "@/components/admin/in-out-events-list";
 
 export default async function Page() {
-  const t = await getTranslations("AdminControlsEventsPage");
+  const t = await getTranslations("AdminInOutEventsPage");
 
   const cookieStore = await cookies();
   const token = cookieStore.get("userRegistered")?.value;

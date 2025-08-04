@@ -118,8 +118,32 @@
     "message-error": "Error during creating!",
     "message-server-error": "Server error"
   },
+  "AdminRegisterEventsPage": {
+    "h1": "Register Events",
+    "control-id": "ID",
+    "username": "Username",
+    "type": "Type",
+    "details": "Details",
+    "date": "Date"
+  },
+  "AdminChangePassEventsPage": {
+    "h1": "Register Events",
+    "control-id": "ID",
+    "username": "Username",
+    "type": "Type",
+    "details": "Details",
+    "date": "Date"
+  },
   "AdminControlsEventsPage": {
     "h1": "Control Events",
+    "control-id": "ID",
+    "username": "Username",
+    "type": "Type",
+    "details": "Details",
+    "date": "Date"
+  },
+  "AdminInOutEventsPage": {
+    "h1": "Login/Logout Events",
     "control-id": "ID",
     "username": "Username",
     "type": "Type",

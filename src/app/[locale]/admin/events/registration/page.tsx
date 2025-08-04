@@ -6,7 +6,7 @@ import { getTranslations } from "next-intl/server";
 import RegistrationEventsList from "@/components/admin/registration-events-lists";
 
 export default async function Page() {
-  const t = await getTranslations("AdminControlsEventsPage");
+  const t = await getTranslations("AdminRegisterEventsPage");
 
   const cookieStore = await cookies();
   const token = cookieStore.get("userRegistered")?.value;
