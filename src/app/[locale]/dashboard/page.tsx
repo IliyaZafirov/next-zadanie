@@ -30,7 +30,7 @@ export default async function Page() {
     const decoded = jwt.decode(token) as { role?: string };
     role = decoded?.role || null;
   } catch (err) {
-    console.log("JWT decode error:", err);
+    console.log(err);
   }
 
   const response = await fetch(
@@ -54,13 +54,28 @@ export default async function Page() {
 
   const controls: Control[] = data;
 
-  const grouped = controls.reduce((acc: any, c) => {
-    if (!acc[c.region_name]) acc[c.region_name] = {};
-    if (!acc[c.region_name][c.section_name])
-      acc[c.region_name][c.section_name] = [];
-    acc[c.region_name][c.section_name].push(c);
-    return acc;
-  }, {});
+  const map = new Map<
+    string,
+    { region: string; section: string; ctrls: Control[] }
+  >();
+
+  for (const ctrl of controls) {
+    const key = `${ctrl.region_name}|${ctrl.section_name}`;
+
+    if (!map.has(key)) {
+      map.set(key, {
+        region: ctrl.region_name,
+        section: ctrl.section_name,
+        ctrls: [],
+      });
+    }
+
+    map.get(key)!.ctrls.push(ctrl);
+  }
+
+  const renderData = Array.from(map.values());
+
+  console.log(renderData);
 
   return (
     <main className="flex flex-col items-center my-16 pt-16 w-full max-w-4xl mx-auto">
@@ -76,35 +91,26 @@ export default async function Page() {
         </GlassLink>
       )}
 
-      {Object.entries(grouped).map(([region, sections]) => (
-        <section key={region} className="w-full bg-gray-900 p-4 mb-6">
+      {renderData.map(({ region, section, ctrls }) => (
+        <section
+          key={`${region}-${section}`}
+          className="w-full bg-gray-900 p-4 mb-6"
+        >
           <p className="text-lg font-bold text-white/60 mb-2">
             {t("region")}: {region}
           </p>
-
-          <section>
-            <p>{t("sections")}:</p>
-            {Object.entries(sections as Record<string, Control[]>).map(
-              ([section, ctrls]) => (
-                <div key={section} className="mb-4">
-                  <h3 className="text-md font-semibold text-cyan-500">
-                    {section}
-                  </h3>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {ctrls.map((ctrl) => (
-                      <ControlButton
-                        key={ctrl.control_id}
-                        controlButtonProps={{
-                          control_id: ctrl.control_id,
-                          control_name: ctrl.control_name,
-                        }}
-                      />
-                    ))}
-                  </div>
-                </div>
-              )
-            )}
-          </section>
+          <h3 className="text-md font-semibold text-cyan-500">{section}</h3>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {ctrls.map((ctrl) => (
+              <ControlButton
+                key={ctrl.control_id}
+                controlButtonProps={{
+                  control_id: ctrl.control_id,
+                  control_name: ctrl.control_name,
+                }}
+              />
+            ))}
+          </div>
         </section>
       ))}
     </main>
